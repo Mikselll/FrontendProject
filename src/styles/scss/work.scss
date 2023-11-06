@@ -1,0 +1,60 @@
+#work {
+  .content {
+    .capybara-project {
+      max-width: 1152px;
+      min-width: 864px;
+
+      display: flex;
+      justify-content: flex-start;
+
+      .capybara-project__image-wrapper {
+        padding: 48px;
+        height: 480px;
+
+        border-radius: 12px 0px 0px 12px;
+        background-color: $color-gray-50;
+
+        &--right {
+          border-right: 1px solid $color-gray-100;
+        }
+        &--left {
+          border-left: 1px solid $color-gray-100;
+        }
+
+        .capybara-project__image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .capybara-project__info-wrapper {
+        padding: 48px;
+        
+        .info {
+          max-width: 480px;
+          min-width: 336px;
+
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+  
+          .info__technologies-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+  
+            .item {
+              padding: 4px 20px;
+              
+              line-height: 20px;
+              color: $color-gray-600;
+  
+              border-radius: 12px;
+              background-color: $color-gray-200;
+            }
+          }
+        }
+      }
+    }
+  }
+}

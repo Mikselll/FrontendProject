@@ -1,0 +1,93 @@
+@font-face {
+  font-weight: 400;
+  font-family: Inter;
+  src: url("../../fonts/Inter-Regular.ttf");
+}
+@font-face {
+  font-weight: 500;
+  font-family: Inter;
+  src: url("../../fonts/Inter-Medium.ttf");
+}
+@font-face {
+  font-weight: 600;
+  font-family: Inter;
+  src: url("../../fonts/Inter-SemiBold.ttf");
+}
+@font-face {
+  font-weight: 700;
+  font-family: Inter;
+  src: url("../../fonts/Inter-Bold.ttf");
+}
+
+body {
+  font-family: Inter;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 72px;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+p {
+  font-size: 16px;
+}
+
+.button {
+  &--hero {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  &--contact {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.fs {
+  &-14 {
+    font-size: 14px;
+  }
+  &-16 {
+    font-size: 16px;
+  }
+  &-18 {
+    font-size: 18px;
+  }
+  &-20 {
+    font-size: 20px;
+  }
+  &-24 {
+    font-size: 24px;
+  }
+}
+
+.fw {
+  &-400 {
+    font-weight: 400;
+  }
+  &-500 {
+    font-weight: 500;
+  }
+  &-600 {
+    font-weight: 600;
+  }
+  &-700 {
+    font-weight: 700;
+  }
+}

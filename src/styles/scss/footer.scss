@@ -1,0 +1,43 @@
+#footer {
+  background-color: $color-gray-50;
+
+  .content {
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+
+      text-align: center;
+      color: $color-yellow;
+
+      .contacts__email, .contacts__number {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .contacts__email {
+        &::before {
+          content: "";
+          
+          width: 32px;
+          height: 32px;
+
+          background-image: url("../../images/footer-gmail-icon.svg");
+        }
+      }
+
+      .contacts__number {
+        &::before {
+          content: "";
+          
+          width: 32px;
+          height: 32px;
+
+          background-image: url("../../images/footer-phone-icon.svg");
+        }
+      }
+    }
+  }
+}

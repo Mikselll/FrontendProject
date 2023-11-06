@@ -1,0 +1,23 @@
+#header {
+  .content {
+    padding: 0 32px;
+    
+    display: flex;
+    justify-content: space-between;
+
+    .navigation {
+      display: flex;
+      align-items: center;
+    
+      .navigation__items {
+        display: flex;
+    
+        .item {
+          margin-right: 24px;
+          
+          color: $color-gray-600;
+        }
+      }
+    }
+  }
+}

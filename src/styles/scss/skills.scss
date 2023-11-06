@@ -1,0 +1,40 @@
+#skills {
+  position: relative;
+
+  .content {
+    .content__items {
+      width: 720px;
+  
+      display: flex;
+      justify-content: space-between;
+  
+      .item {
+        width: 90px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+  
+        .item__icon {
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 10%;
+    height: 42%;
+
+    background-image: url("../../images/skills-orange.png");
+    background-repeat: no-repeat;
+  }
+}

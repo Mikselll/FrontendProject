@@ -1,0 +1,87 @@
+#testimonials {
+  background-color: $color-gray-50;
+
+  .content {
+    padding: 0 32px;
+
+    .content__items {
+      height: 364px;
+
+      display: flex;
+      gap: 32px;
+
+      .main-item {
+        max-width: 480px;
+        min-width: 416px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .main-item__header {
+          display: flex;
+          align-items: center;
+          gap: 32px;
+        }
+
+        .main-item__developer-info {
+          p {
+            line-height: 1.4;
+          }
+        }
+      }
+
+      .secondary-items {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(184px, 328px));
+        grid-template-rows: 156px max-content;
+        grid-template-areas: "first-card  first-card"
+                             "second-card third-card";
+        gap: 28px 48px;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .item__header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4px;
+
+            align-self: flex-start;
+
+            p {
+              line-height: 20px;
+              text-wrap: nowrap;
+            }
+          }
+
+          p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+
+          &:nth-child(1) {
+            grid-area: first-card;
+          }
+          &:nth-child(2) {
+            grid-area: second-card;
+          }
+          &:nth-child(3) {
+            grid-area: third-card;
+          }
+          
+          &:nth-child(2), &:nth-child(3) {
+            p {
+              -webkit-line-clamp: 3;
+            }
+          }
+        }
+      }
+    }
+  }
+}

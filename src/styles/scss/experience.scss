@@ -1,0 +1,104 @@
+#experience {
+  position: relative;
+
+  background-color: $color-gray-50;
+
+  .content {
+    padding: 0 32px;
+
+    .content__main {
+      height: 264px;
+
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+
+      .date-items {
+        padding: 16px 0;
+
+        .item {
+          padding: 16px 32px;
+          width: 228px;
+
+          p {
+            color: $color-gray-500;
+          }
+        }
+      }
+
+      .date-info {
+        padding: 32px;
+        height: 236px;
+
+        display: grid;
+        grid-template-columns: min-content minmax(325px, 505px);
+        grid-template-rows: 28px minmax(128px, 200px);
+        grid-template-areas: "logo header"
+                             "logo list";
+        gap: 16px 48px;
+
+        .date-info__logo {
+          grid-area: logo;
+        }
+        h3 {
+          grid-area: header;
+        }
+        .date-info__list {
+          grid-area: list;
+        }
+        
+        .date-info__list {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          overflow-y: auto;
+
+          .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+
+            .item__icon {
+              padding-top: 9px;
+            }
+          }
+
+          &::-webkit-scrollbar {
+            padding-left: 8px;
+            width: 4px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-image: url(../../images/Progress.svg);
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 262px;
+    height: 192px;
+
+    background-image: url("../../images/experience-left-oranges.png");
+  }
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 280px;
+    height: 158px;
+
+    background-image: url("../../images/experience-right-oranges.png");
+  }
+}
