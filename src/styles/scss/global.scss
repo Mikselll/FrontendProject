@@ -8,11 +8,37 @@ p {
 .content-container {
   padding: 96px 80px;
 
+  @media (max-width: 1023px) {
+    padding: 64px;
+  }
+  @media (max-width: 767px) {
+    padding: 32px 16px;
+  }
+
   &#header {
     padding: 16px 80px;
+
+    @media (max-width: 767px) {
+      padding: 16px;
+    }
   }
   &#hero {
     padding: 96px 80px 120px;
+
+    @media (max-width: 1023px) {
+      padding: 64px 64px 120px;
+    }
+    @media (max-width: 767px) {
+      padding: 32px 16px 120px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &#contact, &#footer {
+      .content {
+        gap: 24px;
+      }
+    }
   }
 }
 
@@ -29,12 +55,21 @@ p {
       align-items: center;
       gap: 16px;
 
+      h1 {
+        text-align: center;
+      }
+
       p {
         max-width: 576px;
 
         text-align: center;
         font-size: 20px;
         line-height: 1.4;
+
+        @media (max-width: 1023px) {
+          font-size: 18px;
+          line-height: 28px;
+        }
       }
 
       &--gray {
@@ -63,6 +98,29 @@ p {
   }
   &.form {
     padding: 48px;
+
+    @media (max-width: 767px) {
+      padding: 24px;
+    }
+  }
+  &--date-middle {
+    border-radius: 12px 12px 0 0;
+  }
+  &--date-junior {
+    border-radius: 0;
+  }
+  &--date-trainee {
+    border-radius: 0 0 12px 12px;
+
+    @media (max-width: 767px) {
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.date-info {
+      border-radius: 0 0 12px 12px;
+    }
   }
 }
 
@@ -75,19 +133,37 @@ p {
   background-color: $color-orange-400;
 
   &--hero {
-    max-width: 345px;
+    width: 345px;
+    height: 44px;
+
+    @media (max-width: 1023px) and (min-width: 767px) {
+      width: 315px;
+    }
   }
-  &--work {
+  &--contact {
+    width: 155px;
+    height: 40px;
+
+    opacity: 0.4;
+  }
+  &--work, &--header  {
     padding: 6px;
     width: 36px;
     height: 36px;
 
     border-radius: 8px;
-    background-image: url(../../images/work-button-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
   }
-  &--contact {
-    width: 155px;
+  &--work {
+    background-image: url(../../images/work-button-icon.svg);
+  }
+  &--header {
+    display: none;
+    background-image: url(../../images/header-button-icon.svg);
+
+    @media (max-width: 767px) {
+      display: block;
+    }
   }
 }

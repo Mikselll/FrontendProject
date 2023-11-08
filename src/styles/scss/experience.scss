@@ -3,85 +3,21 @@
 
   background-color: $color-gray-50;
 
-  .content {
-    padding: 0 32px;
-
-    .content__main {
-      height: 264px;
-
-      display: flex;
-      align-items: flex-start;
-      gap: 32px;
-
-      .date-items {
-        padding: 16px 0;
-
-        .item {
-          padding: 16px 32px;
-          width: 228px;
-
-          p {
-            color: $color-gray-500;
-          }
-        }
-      }
-
-      .date-info {
-        padding: 32px;
-        height: 236px;
-
-        display: grid;
-        grid-template-columns: min-content minmax(325px, 505px);
-        grid-template-rows: 28px minmax(128px, 200px);
-        grid-template-areas: "logo header"
-                             "logo list";
-        gap: 16px 48px;
-
-        .date-info__logo {
-          grid-area: logo;
-        }
-        h3 {
-          grid-area: header;
-        }
-        .date-info__list {
-          grid-area: list;
-        }
-        
-        .date-info__list {
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-
-          overflow-y: auto;
-
-          .item {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-
-            .item__icon {
-              padding-top: 9px;
-            }
-          }
-
-          &::-webkit-scrollbar {
-            padding-left: 8px;
-            width: 4px;
-          }
-          &::-webkit-scrollbar-thumb {
-            background-image: url(../../images/Progress.svg);
-            background-repeat: no-repeat;
-          }
-        }
-      }
-    }
-  }
-
-  &::before {
+  &::before, &::after {
     content: "";
 
     position: absolute;
     bottom: 0;
+
+    background-size: cover;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  &::before {
+    content: "";
+
     left: 0;
 
     width: 262px;
@@ -92,13 +28,144 @@
   &::after {
     content: "";
 
-    position: absolute;
-    bottom: 0;
     right: 0;
 
     width: 280px;
     height: 158px;
 
     background-image: url("../../images/experience-right-oranges.png");
+  }
+
+  .content {
+    padding: 0 32px;
+
+    @media (max-width: 1023px) {
+      padding: 0;
+    }
+
+    .content__main {
+      height: 264px;
+
+      display: grid;
+      grid-template-columns: 228px minmax(540px, 720px);
+      grid-template-rows: repeat(3, min-content);
+      grid-template-areas: "middle-date  info"
+                           "junior-date  info"
+                           "trainee-date info"
+                           "-            info";
+      gap: 0 32px;
+
+      z-index: 1;
+
+      @media (max-width: 1023px) {
+        grid-template-columns: minmax(188px, 228px) minmax(420px, 635px);
+      }
+      @media (max-width: 767px) {
+        height: max-content;
+
+        grid-template-columns: minmax(288px, 520px);
+        grid-template-rows: auto;
+        grid-template-areas: "middle-date"
+                             "info"
+                             "junior-date"
+                             "trainee-date";
+        gap: 0;
+
+        border-radius: 12px;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
+        background-color: $color-default;
+      }
+
+      .date {
+        padding: 16px 32px;
+
+        color: $color-gray-500;
+
+        @media (max-width: 767px) {
+          border-bottom: 1px solid $color-gray-200;
+        }
+
+        &--active {
+          color: $color-gray-950;
+        }
+
+        &:nth-child(1) {
+          grid-area: middle-date;
+
+          padding-top: 32px;
+
+          @media (max-width: 1023px) {
+            padding-top: 16px;
+          }
+        }
+        &:nth-child(2) {
+          grid-area: junior-date;
+        }
+        &:nth-child(3) {
+          grid-area: trainee-date;
+
+          padding-bottom: 32px;
+
+          @media (max-width: 1023px) {
+            padding-bottom: 16px; 
+          }
+        }       
+      }
+
+      .date-info {
+        grid-area: info;
+
+        height: max-content;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 48px;
+
+        @media (max-width: 767px) {
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .date-info__content {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .date-info__list {
+            max-height: 128px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+  
+            overflow-y: auto;
+
+            @media (max-width: 767px) {
+              max-height: 272px;
+            }
+  
+            .item {
+              display: flex;
+              align-items: flex-start;
+              gap: 8px;
+  
+              .item__icon {
+                padding-top: 9px;
+              }
+            }
+  
+            &::-webkit-scrollbar {
+              width: 4px;
+            }
+            &::-webkit-scrollbar-thumb {
+              height: 75px;
+
+              border-radius: 20px;
+              background-color: $color-gray-300;
+            }
+          }
+        }
+      }
+    }
   }
 }

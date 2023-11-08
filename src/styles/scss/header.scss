@@ -5,9 +5,17 @@
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+
     .navigation {
       display: flex;
       align-items: center;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
     
       .navigation__items {
         display: flex;

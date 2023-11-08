@@ -16,25 +16,30 @@
         align-items: center;
         gap: 8px;
       }
+
+      .contacts__email, .contacts__number {
+        &::before {
+          content: "";
+          
+          width: 32px;
+          height: 32px;
+
+          background-size: cover;
+
+          @media (max-width: 1023px) {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
       
       .contacts__email {
         &::before {
-          content: "";
-          
-          width: 32px;
-          height: 32px;
-
           background-image: url("../../images/footer-gmail-icon.svg");
         }
       }
-
       .contacts__number {
         &::before {
-          content: "";
-          
-          width: 32px;
-          height: 32px;
-
           background-image: url("../../images/footer-phone-icon.svg");
         }
       }

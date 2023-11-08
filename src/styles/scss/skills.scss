@@ -1,13 +1,46 @@
 #skills {
   position: relative;
 
+  &::before {
+    content: "";
+    
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 10%;
+    height: 42%;
+
+    background-image: url("../../images/skills-orange.png");
+    background-size: cover;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
   .content {
     .content__items {
-      width: 720px;
+      width: 100%;
+      max-width: 720px;
   
       display: flex;
       justify-content: space-between;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+      &--mobile {
+        display: none;
+
+        @media (max-width: 767px) {
+          max-width: 480px;
   
+          display: flex;
+        }
+      }
+
       .item {
         width: 90px;
 
@@ -20,21 +53,11 @@
           width: 64px;
           height: 64px;
         }
+
+        p {
+          line-height: 28px;
+        }
       }
     }
-  }
-
-  &::before {
-    content: "";
-    
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    width: 10%;
-    height: 42%;
-
-    background-image: url("../../images/skills-orange.png");
-    background-repeat: no-repeat;
   }
 }

@@ -2,32 +2,84 @@
   position: relative;
 
   .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(512px, 768px) auto;
+    grid-template-areas: "info   image"
+                         "button image";
     justify-content: space-between;
-    align-items: center;
-    gap: 32px;
+    gap: 48px 32px;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: auto minmax(372px, 627px);
+      grid-template-areas: "image info"
+                           "image button";
+      gap: 32px;
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "info"
+                           "image"
+                           "button";
+      justify-content: center;
+      gap: 16px;
+    }
+    
+    .content__hero-image {
+      grid-area: image;
+
+      @media (max-width: 1023px) {
+        width: 236px;
+        height: 265px;
+      }
+      @media (max-width: 767px) {
+        width: 279px;
+        height: 314px;
+
+        justify-self: center;
+      }
+    }
+
+    .button {
+      grid-area: button;
+
+      justify-self: end;
+
+      @media (max-width: 1023px) {
+        justify-self: center; 
+      }
+    }
   
-    .content__info-wrapper {
-      max-width: 768px;
-  
+    .content__info {
+      grid-area: info;
+
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      gap: 48px;
+      justify-content: end;
+      gap: 8px;
 
-      .info {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    
-        h1 {
-          color: $color-gray-900;
+      @media (max-width: 1023px) {
+        width: 372px;
+
+        p {
+          display: none;
         }
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    
+      h1 {
+        color: $color-gray-900;
+
+        @media (max-width: 767px) {
+          text-align: center;
+        }        
       }
     }
   }
 
-  .content__wave-image {
+  .wave-image {
     position: absolute;
     left: 0;
     bottom: 0;

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/css/style.css">
+  <link rel="stylesheet" href="./src/styles/css/style.css">
   <title>Capybarara</title>
 </head>
 <body>
   <header id="header" class="content-container">
     <section class="content">
-      <img src="./images/header-logo.svg" alt="capybara logo">
+      <img src="./src/images/header-logo.svg" alt="capybara logo">
       <nav class="navigation">
         <ul class="navigation__items">
           <li>
@@ -34,31 +34,30 @@
           </li>
         </ul>
       </nav>
+      <button type="button" class="button button--header"></button>
     </section>
   </header>
   <main>
     <section id="hero" class="content-container">
       <div class="content">
-        <section class="content__info-wrapper">
-          <div class="info">
-            <h1>
-              Hi, I’m Capybarara&nbsp;👋
-            </h1>
-            <p>
-              Known for its adorable appearance and friendly nature, the Capybarara is now embarking on a journey to find a new job. Motivated by the desire to explore new opportunities and challenges, the Capybarara is determined to utilize its unique skills and traits to secure a fulfilling position!
-            </p>
-          </div>
-          <a href="#contact" class="button button--hero">
-            I WANNA EMPLOY YOU!!!!
-          </a>
+        <section class="content__info">
+          <h1>
+            Hi, I’m Capybarara&nbsp;👋
+          </h1>
+          <p>
+            Known for its adorable appearance and friendly nature, the Capybarara is now embarking on a journey to find a new job. Motivated by the desire to explore new opportunities and challenges, the Capybarara is determined to utilize its unique skills and traits to secure a fulfilling position!
+          </p>
         </section>
-        <img src="./images/hero.png" alt="capybara image">
+        <img src="./src/images/hero.png" alt="capybara image" class="content__hero-image">
+        <a href="#contact" class="button button--hero">
+          I WANNA EMPLOY YOU!!!!
+        </a>
       </div>
       <picture>
-        <source media="(min-width: 1024px)" srcset="./images/hero-wave-desktop.png">
-        <source media="(min-width: 768px)" srcset="./images/hero-wave-tablet.png">
-        <source media="(max-width: 767px)" srcset="./images/hero-wave-mobile.png">
-        <img src="./images/hero-wave-desktop.png" alt="wave image" class="content__wave-image">
+        <source media="(min-width: 1024px)" srcset="./src/images/hero-wave-desktop.png">
+        <source media="(min-width: 768px)" srcset="./src/images/hero-wave-tablet.png">
+        <source media="(max-width: 767px)" srcset="./src/images/hero-wave-mobile.png">
+        <img src="./src/images/hero-wave-desktop.png" alt="wave image" class="wave-image">
       </pictures>
     </section>
     <section id="skills" class="content-container">
@@ -73,33 +72,53 @@
         </header>
         <ul class="content__items">
           <li class="item">
-            <img src="./images/skills-icon-javscript.svg" alt="javascript icon" class="item__icon">
+            <img src="./src/images/skills-icon-javscript.svg" alt="javascript icon" class="item__icon">
             <p class="fs-18">
               Javascript
             </p>
           </li>
           <li class="item">
-            <img src="./images/skills-icon-typescript.svg" alt="typescript icon" class="item__icon">
+            <img src="./src/images/skills-icon-typescript.svg" alt="typescript icon" class="item__icon">
             <p class="fs-18">
               Typescript
             </p>
           </li>
           <li class="item">
-            <img src="./images/skills-icon-react.svg" alt="react icon" class="item__icon">
+            <img src="./src/images/skills-icon-react.svg" alt="react icon" class="item__icon">
             <p class="fs-18">
               React
             </p>
           </li>
           <li class="item">
-            <img src="./images/skills-icon-nextjs.svg" alt="next icon" class="item__icon">
+            <img src="./src/images/skills-icon-nextjs.svg" alt="next icon" class="item__icon">
             <p class="fs-18">
               Next.js
             </p>
           </li>
           <li class="item">
-            <img src="./images/skills-icon-nodejs.svg" alt="node icon" class="item__icon">
+            <img src="./src/images/skills-icon-nodejs.svg" alt="node icon" class="item__icon">
             <p class="fs-18">
               Node.js
+            </p>
+          </li>
+        </ul>
+        <ul class="content__items content__items--mobile">
+          <li class="item">
+            <img src="./src/images/skills-icon-javscript.svg" alt="javascript icon" class="item__icon">
+            <p class="fs-18">
+              Javascript
+            </p>
+          </li>
+          <li class="item">
+            <img src="./src/images/skills-icon-typescript.svg" alt="typescript icon" class="item__icon">
+            <p class="fs-18">
+              Typescript
+            </p>
+          </li>
+          <li class="item">
+            <img src="./src/images/skills-icon-react.svg" alt="react icon" class="item__icon">
+            <p class="fs-18">
+              React
             </p>
           </li>
         </ul>
@@ -112,52 +131,48 @@
             Experience
           </h1>
           <p>
-            Here is a quick summary of Capibarara most recent experiences:
+            Here is a quick summary of Capibarara most recent
+            <br>
+            experiences:
           </p>
         </header>
         <main class="content__main">
-          <ul class="date-items card">
-            <li class="item">
-              <p>
-                May 2020 - Present
-              </p>
-            </li>
-            <li class="item">
-              <p>
-                Dec 2019 - May 2020
-              </p>
-            </li>
-            <li class="item">
-              <p>
-                May 2019 - Dec 2019
-              </p>
-            </li>
-          </ul>
+          <p class="date date--active card card--date-middle">
+            May 2020 - Present
+          </p>
+          <p class="date card card--date-junior">
+            Dec 2019 - May 2020
+          </p>
+          <p class="date card card--date-trainee">
+            May 2019 - Dec 2019
+          </p>
           <section class="date-info card">
-            <img src="./images/experience-logo.svg" alt="white logo" class="date-info__logo">
-            <h3>
-              Middle Frontend Developer
-            </h3>
-            <ul class="date-info__list">
-              <li class="item">
-                <img src="./images/experience-list-marker.svg" alt="marker for list" class="item__icon">
-                <p>
-                  Collaborating with senior developers to enhance skills and learn new technologies
-                </p>
-              </li>
-              <li class="item">
-                <img src="./images/experience-list-marker.svg" alt="marker for list" class="item__icon">
-                <p>
-                  Mentoring and providing guidance to junior frontend developers
-                </p>
-              </li>
-              <li class="item">
-                <img src="./images/experience-list-marker.svg" alt="marker for list" class="item__icon">
-                <p>
-                  Optimizing the performance of web applications
-                </p>
-              </li>
-            </ul>
+            <img src="./src/images/experience-logo.svg" alt="white logo" class="date-info__logo">
+            <div class="date-info__content">
+              <h3>
+                Middle Frontend Developer
+              </h3>
+              <ul class="date-info__list">
+                <li class="item">
+                  <img src="./src/images/experience-list-marker.svg" alt="marker for list" class="item__icon">
+                  <p>
+                    Collaborating with senior developers to enhance skills and learn new technologies
+                  </p>
+                </li>
+                <li class="item">
+                  <img src="./src/images/experience-list-marker.svg" alt="marker for list" class="item__icon">
+                  <p>
+                    Mentoring and providing guidance to junior frontend developers
+                  </p>
+                </li>
+                <li class="item">
+                  <img src="./src/images/experience-list-marker.svg" alt="marker for list" class="item__icon">
+                  <p>
+                    Optimizing the performance of web applications
+                  </p>
+                </li>
+              </ul>
+            </div>
           </section>
         </main>
       </div>
@@ -174,7 +189,7 @@
         </header>
         <section class="capybara-project card">
           <div class="capybara-project__image-wrapper capybara-project__image-wrapper--right">
-            <img src="./images/work-facts.png" alt="capybara tips image" class="capybara-project__image">
+            <img src="./src/images/work-facts.png" alt="capybara tips image" class="capybara-project__image">
           </div>
           <div class="capybara-project__info-wrapper">
             <div class="info">
@@ -247,12 +262,12 @@
             </div>
           </div>
           <div class="capybara-project__image-wrapper capybara-project__image-wrapper--left">
-            <img src="./images/work-tips.png" alt="capybara tips image" class="capybara-project__image">
+            <img src="./src/images/work-tips.png" alt="capybara tips image" class="capybara-project__image">
           </div>
         </section>
         <section class="capybara-project card">
           <div class="capybara-project__image-wrapper capybara-project__image-wrapper--right">
-            <img src="./images/work-whatis.png" alt="capybara tips image" class="capybara-project__image">
+            <img src="./src/images/work-whatis.png" alt="capybara tips image" class="capybara-project__image">
           </div>
           <div class="capybara-project__info-wrapper">
             <div class="info">
@@ -302,9 +317,9 @@
           </p>
         </header>
         <main class="content__items">
-          <div class="main-item card">
+          <section class="main-item card">
             <header class="main-item__header">
-              <img src="./images/testimonials-sarah.png" alt="sarah frontend developer">
+              <img src="./src/images/testimonials-sarah.png" alt="sarah frontend developer">
               <div class="main-item__developer-info">
                 <h3>
                   Sarah
@@ -317,8 +332,8 @@
             <p>
               “I had the opportunity to see a Capibarara at the zoo, and it was such an incredible experience! They are such gentle creatures and so fascinating to watch. Their size and calm nature definitely make them unique among other animal species.”
             </p>
-          </div>
-          <div class="secondary-items">
+          </section>
+          <section class="secondary-items">
             <div class="item card">
               <header class="item__header">
                 <h3>
@@ -358,7 +373,7 @@
                 “As an animal lover, I've always been fascinated by Capybarara. They are super social creatures and thrive in groups. It's amazing how they have adaptations that allow them to live both on land and in water. Their unique appearance and laid-back personality make them the perfect animal to admire!”
               </p>
             </div>
-          </div>
+          </section>
         </main>
       </div>
     </section>
@@ -383,13 +398,13 @@
             <label for="name">
               Name*
             </label>
-            <input id="name" type="text" class="fs-16">
+            <input id="name" type="text" placeholder="capybara fan :)" class="fs-16">
           </div>
           <div class="form__field">
             <label for="phone">
               Phone*
             </label>
-            <input id="phone" type="tel" class="fs-16">
+            <input id="phone" type="tel" placeholder="+7 ______-__-__" class="fs-16">
           </div>
           <div class="form__field">
             <label for="description">
@@ -414,14 +429,14 @@
           What’s next? Feel free to reach out to Capibarara if you're looking for a developer, have a query, or simply want to connect.
         </p>
       </header>
-      <div class="contacts">
+      <main class="contacts">
         <h2 class="contacts__email">
           capibarara@gmail.com
         </h2>
         <h2 class="contacts__number">
           +8 800 200-59-20
         </h2>
-      </div>
+      </main>
     </div>
   </footer>
 </body>

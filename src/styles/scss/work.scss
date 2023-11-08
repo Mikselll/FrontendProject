@@ -2,17 +2,32 @@
   .content {
     .capybara-project {
       max-width: 1152px;
-      min-width: 864px;
 
       display: flex;
       justify-content: flex-start;
 
+      @media (max-width: 1023px) {
+        max-width: 896px;
+      }
+      @media (max-width: 896px) {
+        flex-wrap: wrap;
+
+        &:nth-of-type(2) {
+          flex-direction: column-reverse;
+        }
+      }
+
       .capybara-project__image-wrapper {
         padding: 48px;
         height: 480px;
+        width: 100%;
 
         border-radius: 12px 0px 0px 12px;
         background-color: $color-gray-50;
+
+        @media (max-width: 767px) {
+          display: none;
+        }
 
         &--right {
           border-right: 1px solid $color-gray-100;
@@ -29,11 +44,9 @@
 
       .capybara-project__info-wrapper {
         padding: 48px;
+        width: 100%;
         
         .info {
-          max-width: 480px;
-          min-width: 336px;
-
           display: flex;
           flex-direction: column;
           gap: 24px;
