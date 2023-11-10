@@ -95,31 +95,15 @@ body {
 }
 
 h1, h2 {
-  letter-spacing: -0.02em;
-}
-
-h1 {
   font-size: 60px;
   font-weight: 700;
   line-height: 72px;
+  letter-spacing: -0.02em;
 }
 @media (max-width: 1023px) {
-  h1 {
+  h1, h2 {
     font-size: 48px;
     line-height: 1;
-  }
-}
-
-h2 {
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 40px;
-}
-@media (max-width: 1023px) {
-  h2 {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
   }
 }
 
@@ -133,6 +117,13 @@ p {
   font-size: 16px;
 }
 
+@media (max-width: 767px) {
+  .content-container:not(#skills) h1, .content-container:not(#skills) h2 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+}
 .button--hero {
   font-size: 20px;
   font-weight: 600;
@@ -156,6 +147,19 @@ p {
   font-weight: 500;
 }
 
+.contacts__email, .contacts__number {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+}
+@media (max-width: 1023px) {
+  .contacts__email, .contacts__number {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+}
+
 .fs-14 {
   font-size: 14px;
 }
@@ -176,22 +180,15 @@ p {
   font-weight: 400;
 }
 .fw-500 {
-  font-weight: 500;
+  font-weight: 400;
 }
 .fw-600 {
-  font-weight: 600;
+  font-weight: 400;
 }
 .fw-700 {
-  font-weight: 700;
+  font-weight: 400;
 }
 
-@media (max-width: 767px) {
-  .content-container:not(#skills) h1 {
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 40px;
-  }
-}
 h3 {
   color: #111827;
 }
@@ -234,6 +231,10 @@ p {
     padding: 32px 16px 120px;
   }
 }
+.content-container .content {
+  margin: 0 auto;
+  max-width: 1280px;
+}
 @media (max-width: 767px) {
   .content-container#contact .content, .content-container#footer .content {
     gap: 24px;
@@ -252,7 +253,7 @@ p {
   align-items: center;
   gap: 16px;
 }
-.content-container:not(#header, #hero) .content .content__header h1 {
+.content-container:not(#header, #hero) .content .content__header h2 {
   text-align: center;
 }
 .content-container:not(#header, #hero) .content .content__header p {
@@ -267,10 +268,10 @@ p {
     line-height: 28px;
   }
 }
-.content-container:not(#header, #hero) .content .content__header--gray h1 {
+.content-container:not(#header, #hero) .content .content__header--gray h2 {
   color: #4b5563;
 }
-.content-container:not(#header, #hero) .content .content__header--orange h1 {
+.content-container:not(#header, #hero) .content .content__header--orange h2 {
   color: #f4900c;
 }
 
@@ -634,6 +635,7 @@ p {
   gap: 16px;
 }
 #experience .content .content__main .date-info .date-info__content .date-info__list {
+  list-style: square;
   max-height: 128px;
   display: flex;
   flex-direction: column;
@@ -646,9 +648,18 @@ p {
   }
 }
 #experience .content .content__main .date-info .date-info__content .date-info__list .item {
+  list-style: square;
   display: flex;
   align-items: flex-start;
   gap: 8px;
+}
+#experience .content .content__main .date-info .date-info__content .date-info__list .item::before {
+  content: "";
+  margin-top: 9px;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 50%;
+  background-color: #f4900c;
 }
 #experience .content .content__main .date-info .date-info__content .date-info__list .item .item__icon {
   padding-top: 9px;
@@ -682,8 +693,8 @@ p {
 }
 #work .content .capybara-project .capybara-project__image-wrapper {
   padding: 48px;
-  height: 480px;
   width: 100%;
+  height: 480px;
   border-radius: 12px 0px 0px 12px;
   background-color: #f9fafb;
 }
@@ -775,7 +786,6 @@ p {
 }
 #testimonials .content .content__items .main-item .main-item__developer-info h3 {
   font-size: 24px;
-  font-weight: 600;
   line-height: 32px;
 }
 #testimonials .content .content__items .main-item .main-item__developer-info p {
@@ -894,12 +904,12 @@ p {
   align-items: center;
   gap: 16px;
   text-align: center;
-  color: #ffd600;
 }
 #footer .content .contacts .contacts__email, #footer .content .contacts .contacts__number {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: #ffd600;
 }
 #footer .content .contacts .contacts__email::before, #footer .content .contacts .contacts__number::before {
   content: "";

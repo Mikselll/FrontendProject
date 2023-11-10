@@ -1,20 +1,20 @@
 @font-face {
-  font-weight: 400;
+  @include font-weight(400);
   font-family: Inter;
   src: url("../../fonts/Inter-Regular.ttf");
 }
 @font-face {
-  font-weight: 500;
+  @include font-weight(500);
   font-family: Inter;
   src: url("../../fonts/Inter-Medium.ttf");
 }
 @font-face {
-  font-weight: 600;
+  @include font-weight(600);
   font-family: Inter;
   src: url("../../fonts/Inter-SemiBold.ttf");
 }
 @font-face {
-  font-weight: 700;
+  @include font-weight(700);
   font-family: Inter;
   src: url("../../fonts/Inter-Bold.ttf");
 }
@@ -25,99 +25,89 @@ body {
 }
 
 h1, h2 {
-  letter-spacing: -0.02em;
-}
-h1 {
-  font-size: 60px;
-  font-weight: 700;
+  @include font-options(60px, 700);
   line-height: 72px;
+  letter-spacing: -0.02em;
 
   @media (max-width: 1023px) {
     font-size: 48px;
     line-height: 1;
   }
 }
-h2 {
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 40px;
-
-  @media (max-width: 1023px) {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
-  }
-}
 h3 {
-  font-size: 20px;
-  font-weight: 600;
+  @include font-options(20px, 600);
   line-height: 1.4;
 }
 p {
   font-size: 16px;
 }
 
+@media (max-width: 767px) {
+  .content-container:not(#skills) {
+    h1, h2 {
+      @include font-options(36px, 600);
+      line-height: 40px;
+    }
+  }
+}
+
 .button {
   &--hero {
-    font-size: 20px;
-    font-weight: 600;
+    @include font-options(20px, 600);
     line-height: 1.4;
 
     @media (max-width: 1023px) {
-      font-size: 18px;
-      font-weight: 400;
+      @include font-options(18px, 400);
       line-height: 28px;
     }
     @media (max-width: 767px) {
-      font-size: 20px;
-      font-weight: 600;
+      @include font-options(20px, 600);
     }
   }
   &--contact {
-    font-size: 16px;
-    font-weight: 500;
+    @include font-options(16px, 500);
+  }
+}
+
+.contacts__email, .contacts__number {
+  @include font-options(36px, 600);
+  line-height: 40px;
+
+  @media (max-width: 1023px) {
+    @include font-options(18px, 600);
+    line-height: 28px;
   }
 }
 
 .fs {
   &-14 {
-    font-size: 14px;
+    @include font-size(14px);
   }
   &-16 {
-    font-size: 16px;
+    @include font-size(16px);
   }
   &-18 {
-    font-size: 18px;
+    @include font-size(18px);
   }
   &-20 {
-    font-size: 20px;
+    @include font-size(20px);
   }
   &-24 {
-    font-size: 24px;
+    @include font-size(24px);
   }
 }
 
 .fw {
   &-400 {
-    font-weight: 400;
+    @include font-weight(400);
   }
   &-500 {
-    font-weight: 500;
+    @include font-weight(400);
   }
   &-600 {
-    font-weight: 600;
+    @include font-weight(400);
   }
   &-700 {
-    font-weight: 700;
-  }
-}
-
-@media (max-width: 767px) {
-  .content-container:not(#skills) {
-    h1 {
-      font-size: 36px;
-      font-weight: 600;
-      line-height: 40px;
-    }
+    @include font-weight(400);
   }
 }

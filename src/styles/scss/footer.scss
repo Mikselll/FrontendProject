@@ -9,26 +9,23 @@
       gap: 16px;
 
       text-align: center;
-      color: $color-yellow;
 
       .contacts__email, .contacts__number {
         display: flex;
         align-items: center;
         gap: 8px;
-      }
 
-      .contacts__email, .contacts__number {
+        color: $color-yellow;
+
         &::before {
           content: "";
           
-          width: 32px;
-          height: 32px;
+          @include box-size(32px, 32px);
 
           background-size: cover;
 
           @media (max-width: 1023px) {
-            width: 24px;
-            height: 24px;
+            @include box-size(24px, 24px);
           }
         }
       }

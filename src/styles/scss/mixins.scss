@@ -1,0 +1,15 @@
+@mixin font-size($size) {
+  font-size: $size;
+}
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+@mixin font-options ($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin box-size($width, $height) {
+  width: $width;
+  height: $height;
+}

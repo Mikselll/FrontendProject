@@ -8,8 +8,7 @@
     bottom: 0;
     right: 0;
 
-    width: 10%;
-    height: 42%;
+    @include box-size(10%, 42%);
 
     background-image: url("../../images/skills-orange.png");
     background-size: cover;
@@ -50,8 +49,7 @@
         gap: 8px;
   
         .item__icon {
-          width: 64px;
-          height: 64px;
+          @include box-size(64px, 64px);
         }
 
         p {
