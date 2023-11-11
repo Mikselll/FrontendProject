@@ -19,7 +19,7 @@
 
         &::before {
           content: "";
-          
+
           @include box-size(32px, 32px);
 
           background-size: cover;
@@ -29,7 +29,7 @@
           }
         }
       }
-      
+
       .contacts__email {
         &::before {
           background-image: url("../../images/footer-gmail-icon.svg");
