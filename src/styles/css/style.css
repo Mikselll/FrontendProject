@@ -333,7 +333,7 @@ p {
   height: 40px;
   opacity: 0.4;
 }
-.button--work, .button--header {
+.button--work, .button--open, .button--close {
   padding: 6px;
   width: 36px;
   height: 36px;
@@ -344,14 +344,31 @@ p {
 .button--work {
   background-image: url(../../images/work-button-icon.svg);
 }
-.button--header {
+.button--open {
   display: none;
-  background-image: url(../../images/header-button-icon.svg);
+  background-image: url(../../images/open-button-icon.svg);
 }
 @media (max-width: 767px) {
-  .button--header {
+  .button--open {
     display: block;
   }
+}
+.button--close {
+  background-image: url(../../images/close-button-icon.svg);
+}
+
+.annoying-message {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.font-orange {
+  color: #f4900c;
 }
 
 #header .content {
@@ -378,6 +395,54 @@ p {
 }
 #header .content .navigation .navigation__items .item {
   margin-right: 24px;
+  color: #4b5563;
+}
+#header .burger-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(17, 24, 39, 0.1);
+  backdrop-filter: blur(4px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+#header .burger-wrapper--active {
+  visibility: visible;
+  opacity: 1;
+}
+#header .burger-wrapper .content-burger {
+  width: 320px;
+  height: 667px;
+  background-color: #ffffff;
+  box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.15);
+  transform: translateX(320px);
+  transition: transform 0.5s ease;
+}
+#header .burger-wrapper .content-burger--active {
+  transform: translateX(0);
+}
+#header .burger-wrapper .content-burger .content-burger__logo-section {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+#header .burger-wrapper .content-burger .navigation-burger {
+  padding: 16px;
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 1px solid #f3f4f6;
+}
+#header .burger-wrapper .content-burger .navigation-burger .navigation-burger__items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#header .burger-wrapper .content-burger .navigation-burger .navigation-burger__items .item {
   color: #4b5563;
 }
 
@@ -577,7 +642,7 @@ p {
     height: max-content;
     grid-template-columns: minmax(288px, 520px);
     grid-template-rows: auto;
-    grid-template-areas: "middle-date" "info" "junior-date" "trainee-date";
+    grid-template-areas: "middle-date" "middle-info" "junior-date" "junior-info" "trainee-date" "trainee-info";
     gap: 0;
     border-radius: 12px;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
@@ -619,16 +684,36 @@ p {
 }
 #experience .content .content__main .date-info {
   grid-area: info;
-  height: max-content;
+  padding: 0;
+  height: 0;
   display: flex;
   align-items: flex-start;
   gap: 48px;
+  visibility: hidden;
+  transform: translateX(300px);
+  transition: transform 0.5s ease;
 }
 @media (max-width: 767px) {
   #experience .content .content__main .date-info {
     flex-direction: column;
     gap: 24px;
+    transform: translateY(-60px);
   }
+  #experience .content .content__main .date-info:nth-child(4) {
+    grid-area: middle-info;
+  }
+  #experience .content .content__main .date-info:nth-child(5) {
+    grid-area: junior-info;
+  }
+  #experience .content .content__main .date-info:nth-child(6) {
+    grid-area: trainee-info;
+  }
+}
+#experience .content .content__main .date-info--active {
+  padding: 32px;
+  height: max-content;
+  visibility: visible;
+  transform: translateX(0);
 }
 #experience .content .content__main .date-info .date-info__content {
   display: flex;
@@ -636,7 +721,6 @@ p {
   gap: 16px;
 }
 #experience .content .content__main .date-info .date-info__content .date-info__list {
-  list-style: square;
   max-height: 128px;
   display: flex;
   flex-direction: column;
@@ -649,7 +733,6 @@ p {
   }
 }
 #experience .content .content__main .date-info .date-info__content .date-info__list .item {
-  list-style: square;
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -865,13 +948,14 @@ p {
   text-align: center;
 }
 #footer .content .contacts .contacts__email, #footer .content .contacts .contacts__number {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  position: relative;
   color: #ffd600;
 }
 #footer .content .contacts .contacts__email::before, #footer .content .contacts .contacts__number::before {
   content: "";
+  position: absolute;
+  top: 4px;
+  left: -40px;
   width: 32px;
   height: 32px;
   background-size: cover;

@@ -64,9 +64,11 @@
         grid-template-columns: minmax(288px, 520px);
         grid-template-rows: auto;
         grid-template-areas: "middle-date"
-                             "info"
+                             "middle-info"
                              "junior-date"
-                             "trainee-date";
+                             "junior-info"
+                             "trainee-date"
+                             "trainee-info";
         gap: 0;
 
         border-radius: 12px;
@@ -113,15 +115,40 @@
       .date-info {
         grid-area: info;
 
-        height: max-content;
+        padding: 0;
+        height: 0;
 
         display: flex;
         align-items: flex-start;
         gap: 48px;
 
+        visibility: hidden;
+        transform: translateX(300px);
+        transition: transform 0.5s ease;
+
         @media (max-width: 767px) {
           flex-direction: column;
           gap: 24px;
+
+          transform: translateY(-60px);
+
+          &:nth-child(4) {
+            grid-area: middle-info;
+          }
+          &:nth-child(5) {
+            grid-area: junior-info;
+          }
+          &:nth-child(6) {
+            grid-area: trainee-info;
+          }
+        }
+
+        &--active {
+          padding: 32px;
+          height: max-content;
+
+          visibility: visible;
+          transform: translateX(0);
         }
 
         .date-info__content {
@@ -130,7 +157,6 @@
           gap: 16px;
 
           .date-info__list {
-            list-style: square;
             max-height: 128px;
 
             display: flex;
@@ -144,7 +170,6 @@
             }
   
             .item {
-              list-style: square;
               display: flex;
               align-items: flex-start;
               gap: 8px;

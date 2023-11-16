@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./src/styles/css/style.css">
+  <script defer src="./src/scripts/header-burger-menu.js"></script>
+  <script defer src="./src/scripts/header-navigation-list.js"></script>
+  <script defer src="./src/scripts/experience-change-data.js"></script>
+  <script defer src="./src/scripts/footer-font-color.js"></script>
+  <script defer src="./src/scripts/fotter-number-copy.js"></script>
+  <script defer src="./src/scripts/annoying-message.js"></script>
   <title>Capybarara</title>
 </head>
 <body>
@@ -11,31 +17,21 @@
     <section class="content">
       <img src="./src/images/header-logo.svg" alt="capybara logo">
       <nav class="navigation">
-        <ul class="navigation__items">
-          <li>
-            <a href="#experience" class="item fs-16 fw-500">
-              Experience
-            </a>
-          </li>
-          <li>
-            <a href="#work" class="item fs-16 fw-500">
-              Work
-            </a>
-          </li>
-          <li>
-            <a href="#testimonials" class="item fs-16 fw-500">
-              Testimonials
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="item fs-16 fw-500">
-              Contact
-            </a>
-          </li>
-        </ul>
+        <ul class="navigation__items"></ul>
       </nav>
-      <button type="button" class="button button--header"></button>
+      <button type="button" class="button button--open"></button>
     </section>
+    <div class="burger-wrapper">
+      <section class="content-burger">
+        <div class="content-burger__logo-section">
+          <img src="./src/images/header-logo.svg" alt="capybara logo">
+          <button type="button" class="button button--close"></button>
+        </div>
+        <nav class="navigation-burger">
+          <ul class="navigation-burger__items"></ul>
+        </nav>
+      </section>
+    </div>
   </header>
   <main>
     <section id="hero" class="content-container">
@@ -137,16 +133,16 @@
           </p>
         </header>
         <main class="content__main">
-          <p class="date date--active card card--date-middle">
+          <p class="date date--active card card--date-middle" data-date="middle">
             May 2020 - Present
           </p>
-          <p class="date card card--date-junior">
+          <p class="date card card--date-junior" data-date="junior">
             Dec 2019 - May 2020
           </p>
-          <p class="date card card--date-trainee">
+          <p class="date card card--date-trainee" data-date="trainee">
             May 2019 - Dec 2019
           </p>
-          <section class="date-info card">
+          <section class="date-info date-info--active card" data-date-info="middle">
             <img src="./src/images/experience-logo.svg" alt="white logo" class="date-info__logo">
             <div class="date-info__content">
               <h3>
@@ -166,6 +162,41 @@
                 <li class="item">
                   <p>
                     Optimizing the performance of web applications
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="date-info card" data-date-info="junior">
+            <img src="./src/images/experience-logo.svg" alt="white logo" class="date-info__logo">
+            <div class="date-info__content">
+              <h3>
+                Junior Frontend Developer
+              </h3>
+              <ul class="date-info__list">
+                <li class="item">
+                  <p>
+                    Participating in code reviews and receiving feedback
+                  </p>
+                </li>
+                <li class="item">
+                  <p>
+                    Collaborating with UI/UX designers to implement usability and accessibility enhancements
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="date-info card" data-date-info="trainee">
+            <img src="./src/images/experience-logo.svg" alt="white logo" class="date-info__logo">
+            <div class="date-info__content">
+              <h3>
+                Frontend Trainee
+              </h3>
+              <ul class="date-info__list">
+                <li class="item">
+                  <p>
+                    Testing and debugging features or code snippets
                   </p>
                 </li>
               </ul>
@@ -386,14 +417,14 @@
         </p>
       </header>
       <main class="contacts">
-        <p class="contacts__email">
-          capibarara@gmail.com
-        </p>
-        <p class="contacts__number">
-          +8 800 200-59-20
-        </p>
+        <p class="contacts__email">capibarara@gmail.com</p>
+        <p class="contacts__number">+8 800 200-59-20</p>
       </main>
     </div>
   </footer>
+  <div class="annoying-message">
+    <button type="button" class="button button--close"></button>
+    <img src="./src/images/annoying-image.png" alt="annoying image">
+  </div>
 </body>
 </html>

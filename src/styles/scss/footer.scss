@@ -11,14 +11,16 @@
       text-align: center;
 
       .contacts__email, .contacts__number {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+        position: relative;
 
         color: $color-yellow;
 
         &::before {
           content: "";
+
+          position: absolute;
+          top: 4px;
+          left: -40px;
 
           @include box-size(32px, 32px);
 
