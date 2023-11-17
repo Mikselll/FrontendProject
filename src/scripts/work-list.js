@@ -4,7 +4,7 @@ const data = ['Next.js', 'Typescript', 'PostgreSQL', 'Tailwindcss', 'Figma', 'St
 
 const createTechnologiesItems = (text, list) => {
   const technologiesItem = document.createElement('li');
-  technologiesItem.classList.add('item', 'fw-500');
+  technologiesItem.classList.add('item', 'body-3');
   technologiesItem.textContent = text;
 
   list.append(technologiesItem);

@@ -22,12 +22,14 @@
           top: 4px;
           left: -40px;
 
-          @include box-size(32px, 32px);
+          width: 32px;
+          height: 32px;
 
           background-size: cover;
 
           @media (max-width: 1023px) {
-            @include box-size(24px, 24px);
+            width: 24px;
+            height: 24px;
           }
         }
       }
@@ -38,6 +40,8 @@
         }
       }
       .contacts__number {
+        cursor: pointer;
+
         &::before {
           background-image: url("../../images/footer-phone-icon.svg");
         }

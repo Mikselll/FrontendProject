@@ -19,7 +19,8 @@
 
       .capybara-project__image-wrapper {
         padding: 48px;
-        @include box-size(100%, 480px);
+        width: 100%;
+        height: 480px;
 
         border-radius: 12px 0px 0px 12px;
         background-color: $color-gray-50;
@@ -36,7 +37,8 @@
         }
 
         .capybara-project__image {
-          @include box-size(100%, 100%);
+          width: 100%;
+          height: 100%;
         }
       }
 
@@ -57,7 +59,6 @@
             .item {
               padding: 4px 20px;
               
-              line-height: 20px;
               color: $color-gray-600;
   
               border-radius: 12px;

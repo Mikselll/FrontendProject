@@ -43,17 +43,6 @@
           align-items: center;
           gap: 32px;
         }
-
-        .main-item__developer-info {
-          h3 {
-            font-size: 24px;
-            line-height: 32px;
-          }
-
-          p {
-            line-height: 1.4;
-          }
-        }
       }
 
       .secondary-items {
@@ -92,7 +81,6 @@
             align-self: flex-start;
 
             p {
-              line-height: 20px;
               text-wrap: nowrap;
             }
           }

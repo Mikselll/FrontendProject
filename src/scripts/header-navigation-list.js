@@ -7,7 +7,7 @@ const dataNavigationItems = [
 
 const createNavigationItem = (href, text, list) => {
   const navigationLink = document.createElement('a');
-  navigationLink.classList.add('item', 'fs-16', 'fw-500');
+  navigationLink.classList.add('item', 'body-2', 'body-2--medium');
   navigationLink.setAttribute('href', href);
   navigationLink.textContent = text;
 
