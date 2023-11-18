@@ -183,6 +183,11 @@ h1, h2 {
     font-weight: 600;
   }
 }
+.button--contact {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
 
 h3 {
   color: #111827;
@@ -328,7 +333,6 @@ p {
 .button--contact {
   width: 155px;
   height: 40px;
-  opacity: 0.4;
 }
 .button--work, .button--open, .button--close {
   padding: 6px;
@@ -352,6 +356,9 @@ p {
 }
 .button--close {
   background-image: url(../../images/close-button-icon.svg);
+}
+.button:disabled {
+  opacity: 0.4;
 }
 
 #header .content {
@@ -903,6 +910,55 @@ p {
 }
 #testimonials .content .content__items .secondary-items .item:nth-child(2) p, #testimonials .content .content__items .secondary-items .item:nth-child(3) p {
   -webkit-line-clamp: 3;
+}
+
+#contact {
+  background-image: url(../../images/contact-background.png);
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  #contact {
+    background-image: none;
+  }
+}
+#contact .content .form {
+  width: 100%;
+  max-width: 546px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+#contact .content .form .form__field-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+#contact .content .form .form__field-wrapper .field, #contact .content .form .form__field-wrapper textarea {
+  align-self: stretch;
+  border: 1px solid #6b7280;
+  border-radius: 12px;
+}
+#contact .content .form .form__field-wrapper .field-label {
+  line-height: 20px;
+  color: #6b7280;
+}
+#contact .content .form .form__field-wrapper .field {
+  height: 48px;
+  padding: 12px 16px;
+}
+#contact .content .form .form__field-wrapper textarea {
+  height: 160px;
+  resize: none;
+}
+#contact .content .form .form__field-wrapper--error .field-label, #contact .content .form .form__field-wrapper--error p {
+  color: #CC2828;
+}
+#contact .content .form .form__field-wrapper--error .field {
+  border-color: #CC2828;
 }
 
 #footer {

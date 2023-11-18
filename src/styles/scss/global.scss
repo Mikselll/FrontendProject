@@ -152,8 +152,6 @@ p {
   &--contact {
     width: 155px;
     height: 40px;
-
-    opacity: 0.4;
   }
   &--work, &--open, &--close {
     padding: 6px;
@@ -177,5 +175,8 @@ p {
   }
   &--close {
     background-image: url(../../images/close-button-icon.svg);
+  }
+  &:disabled {
+    opacity: 0.4;
   }
 }
