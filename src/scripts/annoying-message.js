@@ -2,8 +2,9 @@ const annoyingMessage = document.querySelector('.annoying-message');
 const annoyingCloseButton = annoyingMessage.querySelector('.button--close');
 
 annoyingCloseButton.addEventListener('click', () => {
-  annoyingMessage.setAttribute('style', 'display: none');
+  const twoMinutes = 120000;
+  annoyingMessage.classList.remove('annoying-message--active');
   setTimeout(() => {
-    annoyingMessage.setAttribute('style', 'display: flex');
-  }, 120000);
+    annoyingMessage.classList.add('annoying-message--active');
+  }, twoMinutes);
 });

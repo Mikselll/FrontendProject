@@ -204,6 +204,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+.annoying-message--active {
+  transform: translateX(0);
 }
 
 .content-container {
