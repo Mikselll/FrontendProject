@@ -1,0 +1,116 @@
+@font-face {
+  font-weight: 400;
+  font-family: Inter;
+  src: url("../../fonts/Inter-Regular.ttf");
+}
+@font-face {
+  font-weight: 500;
+  font-family: Inter;
+  src: url("../../fonts/Inter-Medium.ttf");
+}
+@font-face {
+  font-weight: 600;
+  font-family: Inter;
+  src: url("../../fonts/Inter-SemiBold.ttf");
+}
+@font-face {
+  font-weight: 700;
+  font-family: Inter;
+  src: url("../../fonts/Inter-Bold.ttf");
+}
+
+body {
+  font-family: Inter;
+  line-height: 1.4;
+}
+
+h1, h2 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 1023px) {
+    font-size: 48px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-container:not(#skills) {
+    h1, h2 {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 40px;
+    }
+  }
+}
+
+.subtitle-1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+
+  &--xl {
+    font-size: 36px;
+    line-height: 40px;
+
+    @media (max-width: 1023px) {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+}
+
+.subtitle-2 {
+  font-size: 20px;
+  line-height: 28px;
+
+  @media (max-width: 1023px) {
+    font-size: 18px;
+  }
+
+  &--semibold {
+    font-weight: 600;
+
+    @media (max-width: 1023px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.body-1 {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.body-2 {
+  font-size: 16px;
+  line-height: 1.5;
+
+  &--medium {
+    font-weight: 500;
+  }
+}
+
+.body-3 {
+  font-weight: 500;
+} 
+
+.button {
+  &--hero {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+
+    @media (max-width: 1023px) {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    @media (max-width: 767px) {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}
