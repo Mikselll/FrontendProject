@@ -1,0 +1,63 @@
+#contact {
+  background-image: url(../../images/contact-background.png);
+  background-position: center;
+  background-size: cover;
+
+  @media (max-width: 767px) {
+    background-image: none;
+  }
+
+  .content {
+    .form {
+      width: 100%;
+      max-width: 546px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+
+      .form__field-wrapper {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+
+        .field, textarea {
+          align-self: stretch;
+
+          border: 1px solid $color-gray-500;
+          border-radius: 12px;
+        }
+
+        .field-label {
+          line-height: 20px;
+          color: $color-gray-500;
+        }
+
+        .field {
+          height: 48px;
+          padding: 12px 16px;
+        }
+
+        textarea {
+          height: 160px;
+
+          resize: none;
+        }
+
+        &--error {
+          .field-label, p {
+            color: $color-error;
+          }          
+
+          .field {
+            border-color: $color-error;
+          }
+        }
+      }
+    }
+  }
+}
