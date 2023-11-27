@@ -6,9 +6,10 @@
   <link rel="stylesheet" href="./src/styles/css/style.css">
   <script defer src="./src/scripts/header-navigation-list.js"></script>
   <script defer src="./src/scripts/work-list.js"></script>
+  <script defer src="./src/scripts/footer-font-color.js"></script>
   <script defer src="./src/scripts/header-burger-menu.js"></script>
   <script defer src="./src/scripts/experience-change-data.js"></script>
-  <script defer src="./src/scripts/footer-font-color.js"></script>
+  <script defer src="./src/scripts/contact-fields-validate.js"></script>
   <script defer src="./src/scripts/fotter-number-copy.js"></script>
   <script defer src="./src/scripts/annoying-message.js"></script>
   <title>Capybarara</title>
@@ -338,6 +339,47 @@
             </div>
           </section>
         </main>
+      </div>
+    </section>
+    <section id="contact" class="content-container">
+      <div class="content">
+        <header class="content__header content__header--gray">
+          <h2>
+            Contact Capibarara
+          </h2>
+          <p class="subtitle-2">
+            Do you wanna chat with Capibarara? Then send the request!
+          </p>
+        </header>
+        <form class="form card">
+          <div class="form__field-wrapper" data-field="subject">
+            <label for="subject" class="field-label">
+              Subject*
+            </label>
+            <input id="subject" type="text" class="field body-2">
+          </div>
+          <div class="form__field-wrapper" data-field="name">
+            <label for="name" class="field-label">
+              Name*
+            </label>
+            <input id="name" type="text" placeholder="capybara fan :)" class="field body-2">
+          </div>
+          <div class="form__field-wrapper" data-field="phone">
+            <label for="phone" class="field-label">
+              Phone*
+            </label>
+            <input id="phone" type="tel" placeholder="+7 ______-__-__" class="field body-2">
+          </div>
+          <div class="form__field-wrapper">
+            <label for="description" class="field-label">
+              Description
+            </label>
+            <textarea id="description" class="body-2"></textarea>
+          </div>
+          <button type="submit" class="button button--contact button--disabled" disabled>
+            Send It!
+          </button>
+        </form>
       </div>
     </section>
   </main>
