@@ -1,7 +1,7 @@
-const buttonOpen: HTMLButtonElement | null = document.querySelector('#header .button--open');
-const buttonClose: HTMLButtonElement | null = document.querySelector('#header .button--close');
-const burgerMenu: HTMLDivElement | null = document.querySelector('.burger-wrapper');
-const burgerContent: HTMLDivElement | null = document.querySelector('.content-burger');
+const buttonOpen = document.querySelector<HTMLButtonElement>('#header .button--open');
+const buttonClose = document.querySelector<HTMLButtonElement>('#header .button--close');
+const burgerMenu = document.querySelector<HTMLDivElement>('.burger-wrapper');
+const burgerContent = document.querySelector<HTMLDivElement>('.content-burger');
 const burgerLinks = document.querySelectorAll<HTMLAnchorElement>('.navigation-burger__items .item');
 
 buttonOpen?.addEventListener('click', () => {

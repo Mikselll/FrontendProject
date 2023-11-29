@@ -1,5 +1,5 @@
-const annoyingMessage: HTMLDivElement | null = document.querySelector('.annoying-message');
-const annoyingCloseButton: HTMLButtonElement | null | undefined = annoyingMessage?.querySelector('.button--close');
+const annoyingMessage = document.querySelector<HTMLDivElement>('.annoying-message');
+const annoyingCloseButton = annoyingMessage?.querySelector<HTMLButtonElement>('.button--close');
 
 annoyingCloseButton?.addEventListener('click', () => {
   const twoMinutes = 120000;

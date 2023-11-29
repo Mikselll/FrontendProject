@@ -3,17 +3,17 @@ const dateItems = document.querySelectorAll<HTMLParagraphElement>('#experience .
 dateItems.forEach((dateItem) => {
   dateItem.addEventListener('click', (event) => {
     const target = <HTMLParagraphElement>event.target;
-    const activeDateItem: HTMLParagraphElement | null = document.querySelector('#experience .date--active');
+    const activeDateItem = document.querySelector<HTMLParagraphElement>('#experience .date--active');
     activeDateItem?.classList.remove('date--active');
 
     const dataActiveDate = activeDateItem?.dataset.date;
-    const activeDateInfoItem: HTMLDivElement | null = document.querySelector(`[data-date-info='${dataActiveDate}']`);
+    const activeDateInfoItem = document.querySelector<HTMLDivElement>(`[data-date-info='${dataActiveDate}']`);
     activeDateInfoItem?.classList.remove('date-info--active');
 
     target.classList.add('date--active');
 
     const dataCurrentDate = target.dataset.date;
-    const currentDateInfoItem: HTMLDivElement | null = document.querySelector(`[data-date-info='${dataCurrentDate}']`);
+    const currentDateInfoItem = document.querySelector<HTMLDivElement>(`[data-date-info='${dataCurrentDate}']`);
     currentDateInfoItem?.classList.add('date-info--active');
   });
 });

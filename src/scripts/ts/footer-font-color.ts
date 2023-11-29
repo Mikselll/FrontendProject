@@ -15,7 +15,7 @@ const changeLettersColor = (text: string) => {
 const contactSelectors = ['.contacts__email', '.contacts__number'];
 
 contactSelectors.forEach((selector) => {
-  const contact: HTMLParagraphElement | null = document.querySelector(selector);
+  const contact = document.querySelector<HTMLParagraphElement>(selector);
   const contactText = contact?.textContent;
   if (!contactText) return;
   const newContactText = changeLettersColor(contactText);

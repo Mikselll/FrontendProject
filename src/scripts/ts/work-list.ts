@@ -15,6 +15,4 @@ technologiesItemsLists.forEach((list) => {
 });
 
 const lastTechnologiesItemsList = Array.from(technologiesItemsLists)[technologiesItemsLists.length - 1];
-if (lastTechnologiesItemsList.firstChild) {
-  lastTechnologiesItemsList.firstChild.textContent = 'React';
-}
+lastTechnologiesItemsList.firstChild ? lastTechnologiesItemsList.firstChild.textContent = 'React' : null;

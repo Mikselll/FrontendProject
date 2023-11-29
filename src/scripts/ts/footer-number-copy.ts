@@ -1,4 +1,4 @@
-const contactNumber: HTMLParagraphElement | null = document.querySelector('.contacts__number');
+const contactNumber = document.querySelector<HTMLParagraphElement>('.contacts__number');
 
 contactNumber?.addEventListener('click', (event) => {
   const currentTarget = <HTMLParagraphElement>event.currentTarget;

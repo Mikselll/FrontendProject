@@ -1,25 +1,25 @@
-const form: HTMLFormElement | null = document.querySelector('.form');
+const form = document.querySelector<HTMLFormElement>('.form');
 
-const subjectValidate = (value: string) => {
+const subjectValidate = (value: string): boolean => {
   const regexp = /^.{1,20}$/;
   return regexp.test(value);
 };
-const nameValidate = (value: string) => {
+const nameValidate = (value: string): boolean => {
   const regexp = /^[A-Za-z\s]+$/;
   return regexp.test(value);
 };
-const phoneValidate = (value: string) => {
+const phoneValidate = (value: string): boolean => {
   const regexp = /^\+\d\s\d{6}-\d{2}-\d{2}$/;
   return regexp.test(value);
 };
 
-const phoneMask = (event: Event) => {
+const phoneMask = (event: Event): void => {
   const target = <HTMLInputElement>event.target
   const phoneNumberTrim = target.value.replace(/[^\d+ ]/g, '');
   const correctPhoneNumber = phoneNumberTrim.replace(/(\d{6})(\d{2})(\d{2})/, '$1-$2-$3');
   target.value = correctPhoneNumber;
 };
-const nameMask = (event: Event) => {
+const nameMask = (event: Event): void => {
   const target = <HTMLInputElement>event.target;
   target.value = target.value.replace(/\b\w/g, (letter) => letter.toUpperCase());
 };
@@ -60,16 +60,16 @@ const formData: dataForm[] = [
 
 formData.forEach((data) => {
   if (!form) return;
-  const fieldWrapper: HTMLDivElement | null = form.querySelector(`[data-field=${data.selector}]`);
-  const field: HTMLInputElement | null | undefined = fieldWrapper?.querySelector('.field');
+  const fieldWrapper = form.querySelector<HTMLDivElement>(`[data-field=${data.selector}]`);
+  const field = fieldWrapper?.querySelector<HTMLInputElement>('.field');
   const error = document.createElement('p');
 
   data.selector !== 'subject' ? field?.addEventListener('input', (event) => data.mask?.(event)) : null;
   data.selector === 'phone' ? field?.addEventListener('focus', (event) => (event.target as HTMLInputElement).value = '+7 ') : null;
 
   field?.addEventListener('blur', (event) => {
-    const target = <HTMLInputElement | null>event.target;
-    const fieldValue = target?.value;
+    const target = <HTMLInputElement>event.target;
+    const fieldValue = target.value;
     if (!fieldValue) return;
     
     if (fieldValue === '') {

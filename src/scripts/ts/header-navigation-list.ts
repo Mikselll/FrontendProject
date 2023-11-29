@@ -22,8 +22,8 @@ const createNavigationItem = (href: string, text: string, list: HTMLUListElement
   list.append(navigationListItem);
 };
 
-const navigationList: HTMLUListElement | null = document.querySelector('.navigation__items');
-const navigationBurgerList: HTMLUListElement | null = document.querySelector('.navigation-burger__items');
+const navigationList = document.querySelector<HTMLUListElement>('.navigation__items');
+const navigationBurgerList = document.querySelector<HTMLUListElement>('.navigation-burger__items');
 
 if (navigationList && navigationBurgerList) {
   dataNavigationItems.forEach(({href, text }) => {
