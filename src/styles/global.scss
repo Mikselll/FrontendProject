@@ -170,18 +170,18 @@ p {
     background-position: center;
   }
   &--work {
-    background-image: url(../../images/work-button-icon.svg);
+    background-image: url(../images/work-button-icon.svg);
   }
   &--open {
     display: none;
-    background-image: url(../../images/open-button-icon.svg);
+    background-image: url(../images/open-button-icon.svg);
 
     @media (max-width: 767px) {
       display: block;
     }
   }
   &--close {
-    background-image: url(../../images/close-button-icon.svg);
+    background-image: url(../images/close-button-icon.svg);
   }
   &:disabled {
     opacity: 0.4;
