@@ -6,6 +6,10 @@
       display: flex;
       justify-content: flex-start;
 
+      &--reverse {
+        flex-direction: row-reverse;
+      }
+
       @media (max-width: 1023px) {
         max-width: 896px;
       }
