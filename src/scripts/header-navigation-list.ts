@@ -1,9 +1,9 @@
-interface dataNavigationItem {
+interface DataNavigationItem {
   href: string;
   text: string;
 }
 
-const dataNavigationItems: dataNavigationItem[] = [
+const dataNavigationItems: DataNavigationItem[] = [
   { href: '#experience', text: 'Experience' },
   { href: '#work', text: 'Work' },
   { href: '#testimonials', text: 'Testimonials' },

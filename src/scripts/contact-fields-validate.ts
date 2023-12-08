@@ -31,14 +31,14 @@ const isFormValid = (): boolean => {
   return result;
 };
 
-interface dataForm {
+interface DataForm {
   selector: string;
   mask?: (event: Event) => void;
   validate: (value: string) => boolean;
   errorMessage: string;
 }
 
-const formData: dataForm[] = [
+const formData: DataForm[] = [
   { 
     selector: 'subject',
     validate: subjectValidate,
@@ -68,9 +68,9 @@ formData.forEach((data) => {
   data.selector === 'phone' ? field?.addEventListener('focus', (event) => (event.target as HTMLInputElement).value = '+7 ') : null;
 
   field?.addEventListener('blur', (event) => {
-    const target = <HTMLInputElement>event.target;
-    const fieldValue = target.value;
-    if (!fieldValue) return;
+    const target = <HTMLInputElement | null>event.target;
+    const fieldValue = target?.value;
+    if (fieldValue === undefined) return;
     
     if (fieldValue === '') {
       fieldWrapper?.classList.add('form__field-wrapper--error');

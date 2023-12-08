@@ -3,7 +3,8 @@ const contactNumber = document.querySelector<HTMLParagraphElement>('.contacts__n
 contactNumber?.addEventListener('click', (event) => {
   const currentTarget = <HTMLParagraphElement>event.currentTarget;
   const number = currentTarget.textContent;
-  if (window.innerWidth <= 1023 || !number) return;
+  const minDesktopWidth = 1023;
+  if (window.innerWidth <= minDesktopWidth || number === null) return;
   navigator.clipboard.writeText(number);
   alert('Number copied');
 });
