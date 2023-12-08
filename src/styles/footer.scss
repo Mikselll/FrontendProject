@@ -36,14 +36,14 @@
 
       .contacts__email {
         &::before {
-          background-image: url("../../images/footer-gmail-icon.svg");
+          background-image: url("../images/footer-gmail-icon.svg");
         }
       }
       .contacts__number {
         cursor: pointer;
 
         &::before {
-          background-image: url("../../images/footer-phone-icon.svg");
+          background-image: url("../images/footer-phone-icon.svg");
         }
       }
     }
