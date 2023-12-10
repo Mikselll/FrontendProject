@@ -1,0 +1,51 @@
+#footer {
+  background-color: $color-gray-50;
+
+  .content {
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+
+      text-align: center;
+
+      .contacts__email, .contacts__number {
+        position: relative;
+
+        color: $color-yellow;
+
+        &::before {
+          content: "";
+
+          position: absolute;
+          top: 4px;
+          left: -40px;
+
+          width: 32px;
+          height: 32px;
+
+          background-size: cover;
+
+          @media (max-width: 1023px) {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+
+      .contacts__email {
+        &::before {
+          background-image: url("../images/footer-gmail-icon.svg");
+        }
+      }
+      .contacts__number {
+        cursor: pointer;
+
+        &::before {
+          background-image: url("../images/footer-phone-icon.svg");
+        }
+      }
+    }
+  }
+}

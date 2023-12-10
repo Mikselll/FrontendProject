@@ -1,0 +1,211 @@
+#experience {
+  position: relative;
+
+  background-color: $color-gray-50;
+
+  &::before, &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+
+    background-size: cover;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  &::before {
+    content: "";
+
+    left: 0;
+
+    width: 262px;
+    height: 192px;
+
+    background-image: url("../images/experience-left-oranges.png");
+  }
+  &::after {
+    content: "";
+
+    right: 0;
+
+    width: 280px;
+    height: 158px;
+
+    background-image: url("../images/experience-right-oranges.png");
+  }
+
+  .content {
+    padding: 0 32px;
+
+    @media (max-width: 1023px) {
+      padding: 0;
+    }
+
+    .content__main {
+      height: 264px;
+
+      display: grid;
+      grid-template-columns: 228px minmax(540px, 720px);
+      grid-template-rows: repeat(3, min-content);
+      grid-template-areas: "middle-date  info"
+                           "junior-date  info"
+                           "trainee-date info"
+                           "-            info";
+      gap: 0 32px;
+
+      z-index: 1;
+
+      @media (max-width: 1023px) {
+        grid-template-columns: minmax(188px, 228px) minmax(420px, 635px);
+      }
+      @media (max-width: 767px) {
+        height: max-content;
+
+        grid-template-columns: minmax(288px, 520px);
+        grid-template-rows: auto;
+        grid-template-areas: "middle-date"
+                             "middle-info"
+                             "junior-date"
+                             "junior-info"
+                             "trainee-date"
+                             "trainee-info";
+        gap: 0;
+
+        border-radius: 12px;
+        box-shadow: $box-shadow--md;
+        background-color: $color-default;
+      }
+
+      .date {
+        padding: 16px 32px;
+
+        color: $color-gray-500;
+
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+          border-bottom: 1px solid $color-gray-200;
+        }
+
+        &--active {
+          color: $color-gray-950;
+        }
+
+        &:nth-child(1) {
+          grid-area: middle-date;
+
+          padding-top: 32px;
+
+          @media (max-width: 1023px) {
+            padding-top: 16px;
+          }
+        }
+        &:nth-child(2) {
+          grid-area: junior-date;
+        }
+        &:nth-child(3) {
+          grid-area: trainee-date;
+
+          padding-bottom: 32px;
+
+          @media (max-width: 1023px) {
+            padding-bottom: 16px; 
+          }
+        }       
+      }
+
+      .date-info {
+        grid-area: info;
+
+        padding: 0;
+        height: 0;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 48px;
+
+        visibility: hidden;
+        transform: translateX(300px);
+        transition: transform 0.5s ease;
+
+        @media (max-width: 767px) {
+          flex-direction: column;
+          gap: 24px;
+
+          transform: translateY(-60px);
+
+          &:nth-child(4) {
+            grid-area: middle-info;
+          }
+          &:nth-child(5) {
+            grid-area: junior-info;
+          }
+          &:nth-child(6) {
+            grid-area: trainee-info;
+          }
+        }
+
+        &--active {
+          padding: 32px;
+          height: max-content;
+
+          visibility: visible;
+          transform: translateX(0);
+        }
+
+        .date-info__content {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .date-info__list {
+            max-height: 128px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+  
+            overflow-y: auto;
+
+            @media (max-width: 767px) {
+              max-height: 272px;
+            }
+  
+            .item {
+              display: flex;
+              align-items: flex-start;
+              gap: 8px;
+
+              &::before {
+                content: "";
+
+                margin-top: 9px;
+                height: 6px;
+                min-width: 6px;
+
+                border-radius: 50%;
+                background-color: $color-orange-500;
+              }
+  
+              .item__icon {
+                padding-top: 9px;
+              }
+            }
+  
+            &::-webkit-scrollbar {
+              width: 4px;
+            }
+            &::-webkit-scrollbar-thumb {
+              height: 75px;
+
+              border-radius: 20px;
+              background-color: $color-gray-300;
+            }
+          }
+        }
+      }
+    }
+  }
+}
