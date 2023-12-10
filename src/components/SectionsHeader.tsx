@@ -22,12 +22,6 @@ const SectionsHeader = ({ sectionId } : { sectionId: string }) => {
       color: 'orange',
     },
     {
-      id: 'work',
-      title: 'Work',
-      subtitle: 'Some of the noteworthy projects Capibarara have built:',
-      color: 'gray',
-    },
-    {
       id: 'testimonials',
       title: 'Testimonials',
       subtitle: 'Nice things people have said about me:',

@@ -1,8 +1,20 @@
+import { useContext } from 'react';
 import cn from 'classnames';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import axios from 'axios';
+import ApiContext from '../contexts/ApiContext';
 
 const ContactSection = () => {
+  type FormValues =  {
+    subject: string;
+    name: string;
+    phone: string;
+    description?: string;
+  };
+
+  const api = useContext(ApiContext);
+
   const validationSchema = yup.object({
     subject: yup.string().max(20, 'The field must contain no more than 20 characters').required('Required field!'),
     name: yup.string().matches(/^[A-Za-z\s]+$/, 'The field must contain only latin characters').required('Required field!'),
@@ -28,9 +40,14 @@ const ContactSection = () => {
       description: '',
     },
     validationSchema,
-    onSubmit: (values) => {
-      alert(`(subject: ${values.subject}, name: ${values.name}, phone: ${values.phone}, description: ${values.description})`);
-      formik.resetForm();
+    onSubmit: async (values: FormValues) => {
+      try {
+        await axios.post(`${api}/send-request`, values);
+        formik.resetForm();
+        alert('Your message has been sent!');
+      } catch (error) {
+        console.log(error);
+      }
     },
   });
 
